@@ -202,8 +202,35 @@ let numeric = 20;
 function showNum(text) {
   console.log(text);
   let numeric = 10;
-  console.log(numeric);
+  console.log(numeric);  // 10
 }
 
 showNum('Hello');
-console.log(numeric);
+console.log(numeric);  // 20
+
+// https://goo.gl/xA9CE1 – про замыкания
+// Замыкание функций. Когда внутри неё есть обращение к какой-либо переменной,
+// функция ищет переменную сначала внутри себя, а потом уже во внешних переменных 
+// причём идёт так до самого высшего уровня шаг за шагом, поэтому
+// Замыкание – это функция со всеми внешними переменными, которые ей доступны.
+
+// Рассмотрим стрелочную функцию из ES6
+let calcArrow = (a,b) => a + b;  // {} можно опустить, если мало операций
+
+console.log(calcArrow(2,7));  // 9
+
+// Теперь поговорим о методах и свойствах
+// https://learn.javascript.ru/string – методы строк
+// – методы чисел
+let str = 'Test';
+console.log(str.length);  // 4
+
+console.log(str.toUpperCase());  // TEST
+console.log(str.toLowerCase());  // test
+
+let twelve = '12.2px';
+
+console.log(parseInt(twelve));  // переводит в другую систему счисления
+console.log(parseFloat(twelve));  // переводит в десятичную систему счисления
+console.log();
+console.log();
