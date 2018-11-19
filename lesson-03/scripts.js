@@ -17,9 +17,9 @@ for (let i = 0; i < 2; i++) {
     let a = prompt('Введите обязательную статью расходов в этом месяце', ''),
         b = prompt('Во сколько обойдется?', '');
     
-    if ((typeof(a)) === 'string' && 
-        (typeof(a)) != null &&
-        (typeof(b)) != null && 
+    if (typeof(a) === 'string' && 
+        typeof(a) != null &&
+        typeof(b) != null && 
         a != '' &&
         b != '' &&
         a.length < 60) {
@@ -27,7 +27,8 @@ for (let i = 0; i < 2; i++) {
         console.log('Done');
         appData.expenses[a] = b;
     } else {
-        break;
+        console.log ("Badly");
+        i--;
     }
 }
 
@@ -74,7 +75,7 @@ for (let i = 0; i < 2; i++) {
 
 console.log(appData);
 
-appData.moneyPerDay = (appData.budget) / 30;
+appData.moneyPerDay = appData.budget / 30;
 
 alert('Мой дневной бюджет ' + appData.moneyPerDay + ' руб.');
 

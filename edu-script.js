@@ -75,6 +75,12 @@ console.log(arr[0]);
 // В логическом контексте в JS только 5 сущностей представляют
 // собой неправду (false) - это 0, пустая строка "" , null , undefined , NaN
 
+// Пример использования массива (из интернета):
+// var user = { "name": "Вася", "age": 35, "isAdmin": false, "friends": [0,1,2,3] };
+// var friends = [{ "thelocation" : "москва", "":""},{ "thelocation" : "london", "":""}];
+//     friends[0].thelocation  // москва
+//     friends[1]['thelocation']  // london
+
 // 
 // В JavaScript есть три преобразования:
 // 
@@ -170,3 +176,34 @@ for (let i = 1; i <= 8; i++) {
   console.log(i);
 }
 
+
+/**
+ * ФУНКЦИИ
+ */
+
+// Такая функция называется Function Expression или функциональное выражение
+let firstCalc = function(a, b) {
+  return a + b;
+}
+
+console.log(firstCalc(3,4));
+
+// Такая функция называется Function Declaration.
+// Может использоваться и до и после объявления функции
+function secondCalc(a, b) {
+  return a + b;
+}
+
+// Основное отличие между ними: функции, объявленные как Function Declaration,
+// создаются интерпретатором до выполнения кода.
+
+let numeric = 20;
+
+function showNum(text) {
+  console.log(text);
+  let numeric = 10;
+  console.log(numeric);
+}
+
+showNum('Hello');
+console.log(numeric);
