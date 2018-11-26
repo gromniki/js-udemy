@@ -221,7 +221,7 @@ console.log(calcArrow(2,7));  // 9
 
 // Теперь поговорим о методах и свойствах
 // https://learn.javascript.ru/string – методы строк
-// – методы чисел
+// https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/Number – методы чисел
 let str = 'Test';
 console.log(str.length);  // 4
 
@@ -232,5 +232,108 @@ let twelve = '12.2px';
 
 console.log(parseInt(twelve));  // переводит в другую систему счисления
 console.log(parseFloat(twelve));  // переводит в десятичную систему счисления
-console.log();
-console.log();
+
+// console.log();
+
+/**
+ * Callback функции
+ */
+
+// callback – это функция, которая должна быть выполнена после того, 
+// как другая функция завершила своё выполнение
+
+function first() {
+  //что-то делаем
+  setTimeout( function() {
+    console.log(1);
+  }, 500 );
+}
+
+function second() {
+  console.log(2);
+}
+
+first();
+second();
+
+
+function learnPL(lang, callback) {
+  console.log('Я учу ' + lang);
+  callback();
+}
+
+function done() {
+  console.log('Я прошёл 4 урока!');
+}
+
+learnPL('JavaScript', done);
+
+// learnPL('JavaScript', function() {
+//   console.log('text');
+// });  // можно и так вызывать функции
+
+/**
+ * ОБЪЕКТЫ
+ */
+
+// Объект можно создать еще и так
+let obj = new Object();  
+// но этот метод не удобный и имеет свои технические минусы
+
+// нормальное создание объекта выглядит так
+let options = {
+  width: 1024,
+  height: 1024,
+  name: 'test'
+};
+
+console.log(options.name);
+options.bool = false  // создание нового свойства налету
+options.color = {  // или свойства-объекта
+  border: 'black',
+  bg: 'red'
+};
+
+delete options.bool;  // удаление свойства из объекта
+
+console.log(options);
+
+for (let key in options) {  // вывод всех значений
+  console.log('Свойство ' + key + ' имеет значение ' + options[key]);
+};
+
+console.log(Object.keys(options).length);
+
+/**
+ * МАССИВЫ И ПСЕВДОМАССИВЫ
+ */
+
+let arr = [1, 2, 3, 4, 5];  // создание простого массива
+
+arr[99] = 99;  // в массив добавится 99 индекс со значением 99
+// в консоли будет: 1, 2, 3, 4, 5, <94 empty items>, 99 
+// так нельзя делать, это грубая ошибка
+// length действует как последний номер индекса + 1
+
+arr.pop();  // удаление последнего элемента из массива
+arr.push(6);  // добавление нового элемента с именем 6 в конец массива arr
+arr.shift();  // удаление первого элемента из массива
+arr.unshift('1');  // добавление нового элемента с именем 1 в начало массива arr
+
+for (let i = 0; i < arr.length; i++) {
+  console.log(arr[i]);
+}
+
+let arr2 = ['first', 2, 3, 'four', 5];
+
+arr2.forEach(function(item, i, mass) {  // способ перебора массива с callback функцией
+  console.log(i + ': ' + item + ' (массив: ' + mass + ')');
+});
+
+arr3 = [2, 4, 5, 6, 9];
+
+for (let key in arr3) {  // с помощью in выведутся только ключи(индексы) массива
+  console.log(key);      // с помощью of выведутся только значения массива
+}
+
+console.log(arr);
