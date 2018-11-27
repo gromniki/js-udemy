@@ -306,6 +306,7 @@ console.log(Object.keys(options).length);
 
 /**
  * МАССИВЫ И ПСЕВДОМАССИВЫ
+ * https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/Array
  */
 
 let arr = [1, 2, 3, 4, 5];  // создание простого массива
@@ -336,4 +337,27 @@ for (let key in arr3) {  // с помощью in выведутся только
   console.log(key);      // с помощью of выведутся только значения массива
 }
 
-console.log(arr);
+let ans = prompt("", ""),
+    arr4 = [];
+
+arr4 = ans.split(',');  // split превращает строку в массив, в скобках разделитель
+console.log(arr4);
+
+let arr5 = ['first', 'second', 'queen', 'picture'];
+    i = arr5.join(', ');  // join превращает массив в строку, в скобках разделитель
+
+console.log(i);
+
+let arr5 = ['first', 'second', 'queen', 'picture'];
+    i = arr5.sort();  // sort сортировка массива. Если не передать функцию
+                                // сравнения, сортирует элементы как строки
+console.log(i);
+
+let arr6 = [1, 5, 13, 7];
+    i = arr6.sort(compareNum);
+
+function compareNum(a, b) {
+  return a-b;
+}
+
+console.log(i);
