@@ -361,3 +361,27 @@ function compareNum(a, b) {
 }
 
 console.log(i);
+
+// Псевдомассив – это объект, структура которого совпадает с обычным массивом
+// он хранит элементы в индексах, но при этом они не обладают методами,
+// свойствами как полноценные массивы из-за отличий в своём прототипе
+
+/**
+ * ООП
+ * https://learn.javascript.ru/constructor-new
+ * https://learn.javascript.ru/classes
+ */
+
+let soldier = {
+  health: 400,
+  armor: 100
+};
+
+let john = {
+  health: 100
+};
+
+john.__proto__ = soldier;  // john наследует от объекта soldier другие свойства
+
+console.log(john);
+console.log('Броня Джона: ' + john.armor);
