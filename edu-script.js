@@ -381,7 +381,28 @@ let john = {
   health: 100
 };
 
-john.__proto__ = soldier;  // john наследует от объекта soldier другие свойства
+//john.__proto__ = soldier;  // john наследует от объекта soldier другие свойства
+john.prototype = soldier;
 
 console.log(john);
 console.log('Броня Джона: ' + john.armor);
+
+
+
+// Разобраться почему не работает код
+let num3 = 18;
+ 
+switch (num3) {
+  case (num3 < 50):
+    console.log(num3 + ' меньше 50');
+    break;
+  case (num3 > 50 && num3 < 100):
+    console.log(num3 + ' больше 50, но меньше 100');
+    break;
+  case (num3 > 100):
+    console.log(num3 + ' больше 100');
+    break;
+  default:
+    console.log('Введите число');
+    break;
+}
