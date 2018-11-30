@@ -75,20 +75,20 @@ let appData = {
     chooseIncome: function() {
         let items = prompt('Что принесет дополнительный доход (перечислите через запятую)', '');
 
-        if (typeof(items) == 'string' && typeof(items) != null && items != '') {
-
-            //forEach (let i = 0; i < 2; i++) {}
-
-            items.forEach(function(item, i) {
-                alert(i + ': ' + item + 'Способы доп. заработка: ');
-            }); // не доделал еще
-
+        if (typeof(items) === 'string' && typeof(items) != null && items != '') {
             appData.income = items.split(', ');
             appData.income.push(prompt('Может что-то ещё?', ''));
             appData.income.sort();
+            appData.income.forEach(function(item, i) {
+                alert(i + 1 + ' способ доп. заработка: ' + item);
+            });
         }
     }
 };
+
+for (let key in appData) {
+    console.log('Наша программа включает в себя данные: ' + key);
+}
 
 
 // 1) Написать проверку, что пользователь может:
@@ -107,6 +107,8 @@ let appData = {
 
 // Вопросы к этому заданию
 // Как перебрать свойства объекта?
+
+// Свойства объекта перебираются с помощью for..in
 
 
 console.log(appData);
