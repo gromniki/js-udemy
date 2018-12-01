@@ -383,8 +383,7 @@ let john = {
   health: 100
 };
 
-//john.__proto__ = soldier;  // john наследует от объекта soldier другие свойства
-john.prototype = soldier;
+john.__proto__ = soldier;  // john наследует от объекта soldier другие свойства
 
 console.log(john);
 console.log('Броня Джона: ' + john.armor);
@@ -392,19 +391,19 @@ console.log('Броня Джона: ' + john.armor);
 
 
 // Разобраться почему не работает код
-let num3 = 18;
- 
-switch (num3) {
-  case (num3 < 50):
-    console.log(num3 + ' меньше 50');
-    break;
-  case (num3 > 50 && num3 < 100):
-    console.log(num3 + ' больше 50, но меньше 100');
-    break;
-  case (num3 > 100):
-    console.log(num3 + ' больше 100');
-    break;
-  default:
-    console.log('Введите число');
-    break;
+let moneySum = 148;
+
+switch (moneySum) {
+    case moneySum < 150:
+        console.log(moneySum + ' меньше 150');
+        break;
+    case moneySum > 150 && moneySum < 200:
+        console.log(moneySum + ' больше 150, но меньше 200');
+        break;
+    case moneySum > 200:
+        console.log(moneySum + ' больше 200');
+        break;
+    default:
+        console.log('неизвестная сумма');
+        break;
 }
