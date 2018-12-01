@@ -66,6 +66,7 @@ alert( "blabla" in obj ); // false
 
 ## МАССИВЫ И ПСЕВДОМАССИВЫ
 https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/Array
+
 https://learn.javascript.ru/array
 
 ```javascript
@@ -132,6 +133,7 @@ console.log(i);
 
 ## ООП
 https://learn.javascript.ru/constructor-new
+
 https://learn.javascript.ru/classes
 
 ```javascript

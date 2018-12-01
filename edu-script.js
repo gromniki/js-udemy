@@ -389,6 +389,63 @@ console.log(john);
 console.log('Броня Джона: ' + john.armor);
 
 
+// test
+function Animal() {
+  this.speed = 0;
+  this.name = name;
+
+  function speed(speed) {
+    this.speed += speed;
+  }
+
+  function stop(stop) {
+    this.speed = 0;
+  }
+}
+
+
+/**
+ * Доступ к элементам DOM
+ */
+
+let box = document.getElementById('box'),  // получаем доступ к элементу по ID
+    btn = document.getElementsByTagName('button'),  // получаем доступ к элементу по тегу
+    circle = document.getElementsByClassName('circle'),  // получаем элемент по именни классу (без точки)
+    heart = document.querySelectorAll('.heart'),  // доступ ко всем селекторам, в данном случае ко всем элементам с именем heart
+//  heart = document.querySelectorAll('.wrapper .heart');  // можно и так
+    oneHeart = document.querySelector('.heart');  // получаем первое сердечко
+
+console.log(box);
+console.log(btn);  // выведется псевдомассив
+console.log(btn[0]);
+console.log(circle[2]);
+console.log(heart);  // выведется псевдомассив данных
+console.log(oneHeart);  // выведется первое сердечко из всего списка, потому что оно первое на странице с таким селектором
+
+// Изменяем элементы
+
+box.style.backgroundColor = 'blue';  // поменяли цвет фона квадратного бокса
+btn[1].style.borderRadius = '50%';  // вторая кнопка стала круглой
+
+circle[0].style.backgroundColor = 'red';
+circle[1].style.backgroundColor = 'yellow';
+circle[2].style.backgroundColor = 'green';  // сделали светофор
+
+for (let i = 0; i < heart.length; i++) {
+  heart[i].style.backgroundColor = 'pink';  // можно таким способом перебрать псевдомассив
+}
+
+
+
+
+
+
+
+
+
+
+
+
 
 // Разобраться почему не работает код
 let moneySum = 148;
