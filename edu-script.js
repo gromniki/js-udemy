@@ -413,7 +413,8 @@ let box = document.getElementById('box'),  // получаем доступ к �
     circle = document.getElementsByClassName('circle'),  // получаем элемент по именни классу (без точки)
     heart = document.querySelectorAll('.heart'),  // доступ ко всем селекторам, в данном случае ко всем элементам с именем heart
 //  heart = document.querySelectorAll('.wrapper .heart');  // можно и так
-    oneHeart = document.querySelector('.heart');  // получаем первое сердечко
+    oneHeart = document.querySelector('.heart'),  // получаем первое сердечко
+    wrapper = document.querySelector('.wrapper');
 
 console.log(box);
 console.log(btn);  // выведется псевдомассив
@@ -434,6 +435,31 @@ circle[2].style.backgroundColor = 'green';  // сделали светофор
 for (let i = 0; i < heart.length; i++) {
   heart[i].style.backgroundColor = 'pink';  // можно таким способом перебрать псевдомассив
 }
+
+heart.forEach(function(item, i, heartsArr) {  // лучший вариант перебора псевдомассива
+  item.style.backgroundColor = 'blue';
+});
+
+let div  = document.createElement('div'),
+    text = document.createTextNode('Создал кусочек текста');
+
+div.classList.add('black');  // <div class="black"></div>
+document.body.appendChild(div);  // добавит <div class="black"></div> в родитель body в самый конец
+wrapper.appendChild(div);  // добавит <div class="black"></div> в родитель wrapper в самый конец
+document.body.insertBefore(div, circle[0]);  // вставит блок div перед первым кругом,
+// если нет второго параметра, то после открывающего тэга body
+document.body.removeChild(circle[1]);  // удалит второй круг со страницы
+// но надо ПОМНИТЬ, что всё это действует по отношению к родительскому элементу
+wrapper.removeChild(heart[2]);  // удалит последнее сердце (родитель wrapper)
+document.body.replaceChild(btn[1], circle[1]);  // подменили второй круг второй кнопкой
+
+div.innerHTML = '<h1>Hello World</h1>';  // внутрь блока div добавили тег h1 с текстом, но такой метод не безопасен
+div.textContent = 'Hello World';  // такой вариант более безопасен, так как здесь можно вставить только текст
+
+// .className не рекомендуется использовать – устарел и не удобен в использовании
+// нужно использовать метод .classList
+
+console.log(div);
 
 
 
