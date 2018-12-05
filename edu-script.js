@@ -406,6 +406,10 @@ function Animal() {
 
 /**
  * Доступ к элементам DOM
+ * 
+ * https://learn.javascript.ru/searching-elements-dom
+ * https://developer.mozilla.org/ru/docs/Web/API/Document/querySelectorAll
+ * 
  */
 
 let box = document.getElementById('box'),  // получаем доступ к элементу по ID
@@ -415,6 +419,18 @@ let box = document.getElementById('box'),  // получаем доступ к �
 //  heart = document.querySelectorAll('.wrapper .heart');  // можно и так
     oneHeart = document.querySelector('.heart'),  // получаем первое сердечко
     wrapper = document.querySelector('.wrapper');
+
+// получить все элементы документа
+document.getElementsByTagName('*');
+
+// получить всех потомков элемента elem:
+elem.getElementsByTagName('*');
+
+// document.getElementsByName
+// Вызов document.getElementsByName(name) позволяет получить все элементы с данным атрибутом name.
+// Практически не используется
+
+// document.body.innerHTML = ''; // удалить всё содержимое BODY
 
 console.log(box);
 console.log(btn);  // выведется псевдомассив
