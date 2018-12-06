@@ -523,8 +523,20 @@ btns[0].addEventListener('click', function(event) {
 // Цель: кнопка номер 1
 // Действие: скрытие кнопки с помощью свойства CSS display
 
-// Всплытие событий
+// Всплытие событий – это когда обработчик события срабатывает сначала на самом вложенном элементе
+// затем на родителя, если таковой имеется, а затем выше и выше.
+// Важно уметь отменять стандартные события в браузере
+let btn3 = document.getElementsByTagName('button');
+let wrap = document.querySelector('.wrapper');
 
+btns[0].addEventListener('click', function(event) {
+  console.log('Произошло событие: ' + event.type + ' на элементе ' + event.target);
+});
+
+wrap.addEventListener('click', function() {
+  console.log('Произошло событие: ' + event.type + ' на элементе ' + event.target);
+});
+// 
 
 
 
