@@ -479,10 +479,51 @@ div.textContent = 'Hello World';  // такой вариант более без
 console.log(div);
 
 
+/**
+ * СОБЫТИЯ И ИХ ОБРАБОТЧИКИ
+ */
 
+let btns = document.getElementsByTagName('button');
 
+btns[0].onclick = function() {
+  console.log('Нажата первая кнопка');
+}
 
+btns[0].onclick = function() {
+  console.log('Нажата снова первая кнопка');
+}
+// В этом случае отработает только вторая функция. 
+// Первая сотрётся из памяти. Это не очень хорошо
+// Чтобы этого избежать, надо правильно назначать обработчики событий
+// Ниже показано как
 
+btns[0].addEventListener('click', function() {
+  console.log('Нажата первая кнопка');
+  console.log('Нажата снова первая кнопка');
+});
+// В этом случае отработают все алерты. Даже если мы пропишем два одинаковых блока,
+// как в первом случае, то всё-равно все отработают.
+
+btns[0].addEventListener('mouseenter', function() {
+  console.log('Мышка наведена на первую кнопку');
+});
+// Событие наведения на объект
+
+btns[0].addEventListener('click', function(event) {
+  console.log('Произошло событие: ' + event.type + ' на элементе ' + event.target);
+});
+// Событие event как параметр функции
+
+btns[0].addEventListener('click', function(event) {
+  console.log(event);
+
+  let target = event.target;
+  target.style.display = 'none';
+});
+// Цель: кнопка номер 1
+// Действие: скрытие кнопки с помощью свойства CSS display
+
+// Всплытие событий
 
 
 
