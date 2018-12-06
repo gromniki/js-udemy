@@ -409,6 +409,7 @@ function Animal() {
  * 
  * https://learn.javascript.ru/searching-elements-dom
  * https://developer.mozilla.org/ru/docs/Web/API/Document/querySelectorAll
+ * https://developer.mozilla.org/ru/docs/Web/API/Element/querySelectorAll
  * 
  */
 

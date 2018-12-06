@@ -1,17 +1,21 @@
 'use strict';
 
 let startCalc = document.getElementById('start');  // получил доступ к кнопке Начать расчет
-let allBlocks = document.querySelectorAll('.-value');  // получил все блоки со значением *-value
+let allBlocks = document.querySelectorAll('.budget-value, .daybudget-value, .level-value, .expenses-value, .optionalexpenses-value, .income-value, .monthsavings-value, .yearsavings-value');  // получил все блоки со значением *-value
+let expensesItem = document.getElementsByClassName('expenses-item');
+let optExpensesItem = document.querySelectorAll('.optionalexpenses-item');
+let btnExpences = document.getElementsByTagName('button')[0];
+let btnOptExpences = document.getElementsByTagName('button')[1];
+let btnCount = document.getElementsByTagName('button')[2];
+let other = document.querySelector('input');
 
 console.log(allBlocks);
+console.log(expensesItem);
+console.log(btnExpences);
+console.log(btnOptExpences);
+console.log(btnCount);
+console.log(optExpensesItem);
+console.log(other);
 
-// Получить все блоки в правой части программы через классы (которые имеют класс название-value, начиная с <div class="budget-value"></div>
-// и заканчивая <div class="yearsavings-value"></div>)
-
-// ·        Получить поля(input) c обязательными расходами через класс. (class=”expenses-item”)
-
-// ·        Получить кнопки “Утвердить” и “Рассчитать” через Tag, каждую в своей переменной. 
-
-// ·        Получить поля для ввода необязательных расходов (optionalexpenses-item) при помощи querySelectorAll
 
 // ·        Получить оставшиеся поля через querySelector (статьи возможного дохода, чекбокс, сумма, процент, год, месяц, день)
