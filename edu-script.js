@@ -541,8 +541,6 @@ wrap.addEventListener('click', function() {
 
 
 
-
-
 // Разобраться почему не работает код
 let moneySum = 148;
 
