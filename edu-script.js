@@ -481,6 +481,9 @@ console.log(div);
 
 /**
  * СОБЫТИЯ И ИХ ОБРАБОТЧИКИ
+ * 
+ * https://learn.javascript.ru/introduction-browser-events
+ * 
  */
 
 let btns = document.getElementsByTagName('button');
@@ -524,10 +527,13 @@ btns[0].addEventListener('click', function(event) {
 // Действие: скрытие кнопки с помощью свойства CSS display
 
 // Всплытие событий – это когда обработчик события срабатывает сначала на самом вложенном элементе
-// затем на родителя, если таковой имеется, а затем выше и выше.
+// затем на родителе, если таковой имеется, а затем выше и выше.
 // Важно уметь отменять стандартные события в браузере
-let btn3 = document.getElementsByTagName('button');
+
+// let btn3 = document.getElementsByTagName('button');
+let btn3 = document.querySelectorAll('button');
 let wrap = document.querySelector('.wrapper');
+let link = document.querySelector('a');
 
 btns[0].addEventListener('click', function(event) {
   console.log('Произошло событие: ' + event.type + ' на элементе ' + event.target);
@@ -538,7 +544,19 @@ wrap.addEventListener('click', function() {
 });
 // 
 
+link.addEventListener('click', function(event) {
+  event.preventDefault();  // отменяет стандартное поведение объекта в браузере
+  console.log('Произошло событие: ' + event.type + ' на элементе ' + event.target);
+  // return false;  // устаревший костыльный метод
+});
 
+btn3.forEach(function(item) {
+  item.addEventListener('mouseleave', function() {
+    console.log('Вышли!');
+  });
+});
+// использовать такой метод - не ошибка, это допускается, но так лучше не делать, 
+// так как нарушаются некоторые правила
 
 
 // Разобраться почему не работает код
