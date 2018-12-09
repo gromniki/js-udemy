@@ -4,6 +4,13 @@ JavaScript
 - https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Operators/Operator_Precedence – table of priority
 - https://developer.mozilla.org/ru/docs/Web/JavaScript/Introduction_to_Object-Oriented_JavaScript – Operator_Precedence
 - https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/Array – Arrays
+
+### DOM
 - https://learn.javascript.ru/searching-elements-dom – Search in DOM
 
+### События
+- https://learn.javascript.ru/introduction-browser-events 
+- https://developer.mozilla.org/ru/docs/Web/API/EventTarget/addEventListener
+
+### О разном
 - https://medium.com/webbdev/vs-b15bc3155c63 – let vs const
