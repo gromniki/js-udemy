@@ -48,6 +48,47 @@ startCalc.addEventListener('click', function() {
     dayValue.value = new Date(Date.parse(time)).getDate();
 });
 
+btnExpences.addEventListener('click', function() {
+    let sum = 0;
+
+    for (let i = 0; i < expensesItem.length; i++) {
+        let a = expensesItem[i].value;
+        let b = expensesItem[++i].value;
+        
+        if (typeof(a) === 'string' && 
+            typeof(a) != null &&
+            typeof(b) != null && 
+            a != '' &&
+            b != '' &&
+            a.length < 60) {
+    
+            console.log('Done');
+            appData.expenses[a] = b;
+            sum += +b;
+        } else {
+            console.log ("Badly");
+            i--;
+        }
+    }
+
+    expensesValue.textContent = sum;
+});
+
+btnOptionalExpences.addEventListener('click', function() {
+    for (let i = 0; i < optionalExpensesItem.length; i++) {
+        let optExpenses = optionalExpensesItem[i].value;
+
+        appData.optionalExpenses[i] = optExpenses;
+        optionalExpensesValue.textContent += appData.optionalExpenses[i] + ', ';
+    }
+});
+
+btnCount.addEventListener('click', function() {
+    appData.moneyPerDay = (appData.budget / 30).toFixed();  // toFixed преобразовывает в строку и округляет число
+
+    alert('Мой дневной бюджет ' + appData.moneyPerDay + ' руб.');
+});
+
 let appData = {
     budget: money,
     timeData: time,
@@ -55,31 +96,8 @@ let appData = {
     optionalExpenses: {},
     income: [],
     savings: true,
-    chooseExpenses: function () {
-        for (let i = 0; i < 2; i++) {
-            let a = prompt('Введите обязательную статью расходов в этом месяце', ''),
-                b = prompt('Во сколько обойдется?', '');
-            
-            if (typeof(a) === 'string' && 
-                typeof(a) != null &&
-                typeof(b) != null && 
-                a != '' &&
-                b != '' &&
-                a.length < 60) {
-        
-                console.log('Done');
-                appData.expenses[a] = b;
-            } else {
-                console.log ("Badly");
-                i--;
-            }
-        }
-    },
-    detectDayBudget: function() {
-        appData.moneyPerDay = (appData.budget / 30).toFixed();  // toFixed преобразовывает в строку и округляет число
-
-        alert('Мой дневной бюджет ' + appData.moneyPerDay + ' руб.');
-    },
+    chooseExpenses: {},
+    detectDayBudget: function() {},
     detectLevel: function() {
         if (appData.moneyPerDay < 100) {
             console.log('Минимальный уровень достатка');
@@ -100,13 +118,7 @@ let appData = {
             alert('Доход в месяц с вашего депозита: ' + appData.monthIncome);
         }
     },
-    chooseOptExpenses: function() {
-        for (let i = 1; i < 3; i++) {
-            let optExpenses = prompt('Статья необязательных расходов', '');
-    
-            appData.optionalExpenses[i] = optExpenses;
-        }
-    },
+    chooseOptExpenses: {},
     chooseIncome: function() {
         let items = prompt('Что принесет дополнительный доход (перечислите через запятую)', '');
 
