@@ -84,7 +84,7 @@ btnOptionalExpences.addEventListener('click', function() {
 });
 
 btnCount.addEventListener('click', function() {
-    if (appData != undefined) {
+    if (appData.budget != undefined) {
         appData.moneyPerDay = (appData.budget / 30).toFixed();  // toFixed преобразовывает в строку и округляет число
         dayBudgetValue.textContent = appData.moneyPerDay;
         
@@ -103,8 +103,6 @@ btnCount.addEventListener('click', function() {
     } else {
         dayBudgetValue.textContent = 'Произошла ошибка';
     }
-
-    
 });
 
 let appData = {
