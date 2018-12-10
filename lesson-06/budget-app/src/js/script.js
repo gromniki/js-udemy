@@ -84,9 +84,27 @@ btnOptionalExpences.addEventListener('click', function() {
 });
 
 btnCount.addEventListener('click', function() {
-    appData.moneyPerDay = (appData.budget / 30).toFixed();  // toFixed преобразовывает в строку и округляет число
+    if (appData != undefined) {
+        appData.moneyPerDay = (appData.budget / 30).toFixed();  // toFixed преобразовывает в строку и округляет число
+        dayBudgetValue.textContent = appData.moneyPerDay;
+        
+        if (appData.moneyPerDay < 100) {
+            levelValue.textContent = 'Минимальный уровень достатка';
+            console.log('Минимальный уровень достатка');
+        } else if (appData.moneyPerDay > 100 && appData.moneyPerDay < 2000) {
+            levelValue.textContent = 'Средний уровень достатка';
+            console.log('Средний уровень достатка');
+        } else if (appData.moneyPerDay > 2000) {
+            levelValue.textContent = 'Высокий уровень достатка';
+            console.log('Высокий уровень достатка');
+        } else {
+            console.log('Сбой какой-то');
+        }
+    } else {
+        dayBudgetValue.textContent = 'Произошла ошибка';
+    }
 
-    alert('Мой дневной бюджет ' + appData.moneyPerDay + ' руб.');
+    
 });
 
 let appData = {
@@ -98,17 +116,7 @@ let appData = {
     savings: true,
     chooseExpenses: {},
     detectDayBudget: function() {},
-    detectLevel: function() {
-        if (appData.moneyPerDay < 100) {
-            console.log('Минимальный уровень достатка');
-        } else if (appData.moneyPerDay > 100 && appData.moneyPerDay < 2000) {
-            console.log('Средний уровень достатка');
-        } else if (appData.moneyPerDay > 2000) {
-            console.log('Высокий уровень достатка');
-        } else {
-            console.log('Сбой какой-то');
-        }
-    },
+    detectLevel: function() {},
     checkSavings: function() {
         if (appData.savings == true) {
             let save = +prompt('Какая сумма накоплений?', ''),
