@@ -83,9 +83,11 @@ btnOptionalExpences.addEventListener('click', function() {
     }
 });
 
+// 3) Реализовать функционал: при расчете дневного бюджета учитывать сумму обязательных трат 
+// (т. e. от бюджета на месяц отнимаем общую сумму всех обяз. трат и ее делим на 30 дней)
 btnCount.addEventListener('click', function() {
     if (appData.budget != undefined) {
-        appData.moneyPerDay = (appData.budget / 30).toFixed();  // toFixed преобразовывает в строку и округляет число
+        appData.moneyPerDay = (appData.budget - expensesValue.value / 30).toFixed();  // toFixed преобразовывает в строку и округляет число
         dayBudgetValue.textContent = appData.moneyPerDay;
         
         if (appData.moneyPerDay < 100) {
@@ -144,7 +146,10 @@ percentValue.addEventListener('input', function() {
         monthSavingsValue.textContent = appData.monthIncome.toFixed(1);
         yearSavingsValue.textContent = appData.yearIncome.toFixed(1);
     }
- });
+});
+
+// 2) Если программа еще не запущена (не нажали кнопку "Начать расчет") - сделать кнопки неактивными.
+
 
 let appData = {
     budget: money,
