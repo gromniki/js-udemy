@@ -48,6 +48,7 @@ console.log(arr[0]);
  * https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Operators/Operator_Precedence
  * https://learn.javascript.ru/comparison
  * https://learn.javascript.ru/types-conversion
+ * https://learn.javascript.ru/logical-ops
  */
 
 // let answer = confirm('Are you here');  // Модальное с двумя вариантами (boolean)
@@ -107,6 +108,11 @@ console.log('2' === 2);  // false (строгое сравнение по тип
 
 console.log(4 * 3 ** 2);  // 4 * 9 = 36
 
+// alert( true && true ); // true
+// alert( false && true ); // false
+// alert( true && false ); // false
+// alert( false && false ); // false
+
 /**
  * УСЛОВИЯ
  */
@@ -121,7 +127,7 @@ if (num < 49) {
   console.log('Верно');
 }
 
-var result = true ? 1 : 0;  // формула тернарного оператора
+let result = true ? 1 : 0;  // формула тернарного оператора
 (num == 50) ? console.log('Верно') : console.log('Неверно');  // тернарный оператор
 
 
