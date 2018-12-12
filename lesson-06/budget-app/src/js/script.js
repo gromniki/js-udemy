@@ -1,6 +1,6 @@
 'use strict';
 
-let startCalc = document.getElementById('start');  // получил доступ к кнопке Начать расчет
+let startPrograms = document.getElementById('start');  // получил доступ к кнопке Начать расчет
 
 // Задаю переменные для значений
 let budgetValue = document.getElementsByClassName('budget-value')[0];
@@ -32,7 +32,7 @@ let money;
 let time;
 
 
-startCalc.addEventListener('click', function() {
+startPrograms.addEventListener('click', function() {
     time = prompt('Введите дату в формате YYYY-MM-DD', '');
     money = +prompt('Ваш бюджет на месяц?', '');
 
@@ -87,7 +87,7 @@ btnOptionalExpences.addEventListener('click', function() {
 // (т. e. от бюджета на месяц отнимаем общую сумму всех обяз. трат и ее делим на 30 дней)
 btnCount.addEventListener('click', function() {
     if (appData.budget != undefined) {
-        appData.moneyPerDay = (appData.budget - expensesValue.value / 30).toFixed();  // toFixed преобразовывает в строку и округляет число
+        appData.moneyPerDay = ((appData.budget - expensesValue.textContent) / 30).toFixed();  // toFixed преобразовывает в строку и округляет число
         dayBudgetValue.textContent = appData.moneyPerDay;
         
         if (appData.moneyPerDay < 100) {
