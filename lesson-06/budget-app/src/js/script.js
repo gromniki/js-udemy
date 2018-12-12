@@ -18,6 +18,7 @@ let optionalExpensesItem = document.querySelectorAll('.optionalexpenses-item');
 let btnExpences = document.getElementsByTagName('button')[0];
 let btnOptionalExpences = document.getElementsByTagName('button')[1];
 let btnCount = document.getElementsByTagName('button')[2];
+let allBtns = document.querySelectorAll('button');
 
 // Задаю переменные оставшимся input'ам 
 let incomeItem = document.querySelector('.choose-income');
@@ -46,6 +47,8 @@ startPrograms.addEventListener('click', function() {
     yearValue.value = new Date(Date.parse(time)).getFullYear();
     monthValue.value = new Date(Date.parse(time)).getMonth() + 1;
     dayValue.value = new Date(Date.parse(time)).getDate();
+
+    
 });
 
 btnExpences.addEventListener('click', function() {
