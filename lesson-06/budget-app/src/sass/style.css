@@ -236,9 +236,14 @@ a:active {
   margin-left: 25px;
 }
 
+.data button {
+  -webkit-transition-duration: 0.28s;
+          transition-duration: 0.28s;
+}
+
 .data button:disabled {
   background-image: none;
-  background-color: #ccc;
+  background-color: #cccccc;
   cursor: default;
 }
 /*# sourceMappingURL=style.css.map */

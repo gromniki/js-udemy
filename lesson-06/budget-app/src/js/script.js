@@ -49,8 +49,9 @@ startPrograms.addEventListener('click', function() {
     monthValue.value = new Date(Date.parse(time)).getMonth() + 1;
     dayValue.value = new Date(Date.parse(time)).getDate();
 
-    //allBtns.removeAtt('disabled');
-    document.querySelector('button')[0].removeAttribute('disabled');
+    allBtns.forEach(function(item) {
+        item.removeAttribute('disabled');
+    });
 });
 
 btnExpences.addEventListener('click', function() {
