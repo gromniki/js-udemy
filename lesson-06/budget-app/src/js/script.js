@@ -33,6 +33,7 @@ let money;
 let time;
 
 
+// 2) Если программа еще не запущена (не нажали кнопку "Начать расчет") - сделать кнопки неактивными.
 startPrograms.addEventListener('click', function() {
     time = prompt('Введите дату в формате YYYY-MM-DD', '');
     money = +prompt('Ваш бюджет на месяц?', '');
@@ -48,7 +49,8 @@ startPrograms.addEventListener('click', function() {
     monthValue.value = new Date(Date.parse(time)).getMonth() + 1;
     dayValue.value = new Date(Date.parse(time)).getDate();
 
-    
+    //allBtns.removeAtt('disabled');
+    document.querySelector('button')[0].removeAttribute('disabled');
 });
 
 btnExpences.addEventListener('click', function() {
@@ -151,9 +153,7 @@ percentValue.addEventListener('input', function() {
     }
 });
 
-// 2) Если программа еще не запущена (не нажали кнопку "Начать расчет") - сделать кнопки неактивными.
-
-
+// Основной объект моей программы
 let appData = {
     budget: money,
     expenses: {},

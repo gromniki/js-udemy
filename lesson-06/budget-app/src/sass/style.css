@@ -50,7 +50,7 @@ a:active {
   width: 100%;
   margin-top: 30px;
   font-weight: 500;
-  font-size: 30px;
+  font-size: 32px;
   color: #262626;
   text-align: center;
 }
@@ -234,5 +234,11 @@ a:active {
   width: 80px;
   height: 30px;
   margin-left: 25px;
+}
+
+.data button:disabled {
+  background-image: none;
+  background-color: #ccc;
+  cursor: default;
 }
 /*# sourceMappingURL=style.css.map */
