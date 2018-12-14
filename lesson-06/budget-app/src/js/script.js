@@ -32,6 +32,9 @@ let dayValue = document.querySelector('.day-value');
 let money;
 let time;
 
+expensesBtn.disabled = true;
+optionalExpensesBtn.disabled = true;
+countBtn.disabled = true;
 
 // 2) Если программа еще не запущена (не нажали кнопку "Начать расчет") - сделать кнопки неактивными.
 startPrograms.addEventListener('click', function() {
@@ -48,10 +51,14 @@ startPrograms.addEventListener('click', function() {
     yearValue.value = new Date(Date.parse(time)).getFullYear();
     monthValue.value = new Date(Date.parse(time)).getMonth() + 1;
     dayValue.value = new Date(Date.parse(time)).getDate();
+	
+	expensesBtn.disabled = false;
+    optionalExpensesBtn.disabled = false;
+    countBtn.disabled = false;
 
-    allBtns.forEach(function(item) {
-        item.removeAttribute('disabled');
-    });
+    // allBtns.forEach(function(item) {
+    //    item.removeAttribute('disabled');
+    // });  // это был мой вариант отключения атрибута disabled
 });
 
 btnExpences.addEventListener('click', function() {
@@ -93,7 +100,7 @@ btnOptionalExpences.addEventListener('click', function() {
 // (т. e. от бюджета на месяц отнимаем общую сумму всех обяз. трат и ее делим на 30 дней)
 btnCount.addEventListener('click', function() {
     if (appData.budget != undefined) {
-        appData.moneyPerDay = ((appData.budget - expensesValue.textContent) / 30).toFixed();  // toFixed преобразовывает в строку и округляет число
+        appData.moneyPerDay = ((appData.budget - +expensesValue.textContent) / 30).toFixed();  // toFixed преобразовывает в строку и округляет число
         dayBudgetValue.textContent = appData.moneyPerDay;
         
         if (appData.moneyPerDay < 100) {

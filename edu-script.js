@@ -491,6 +491,8 @@ console.log(div);
  * 
  * https://learn.javascript.ru/introduction-browser-events
  * https://developer.mozilla.org/ru/docs/Web/API/EventTarget/addEventListener
+ * https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/Date
+ * https://www.w3schools.com/tags/att_disabled.asp
  * 
  */
 
