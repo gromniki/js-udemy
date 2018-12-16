@@ -120,7 +120,7 @@ btnCount.addEventListener('click', function() {
     }
 });
 
-incomeItem.addEventListener('input', function() {  // есть еще событие 'change', которое действует, когда убирается фокус
+incomeItem.addEventListener('input', () => {  // есть еще событие 'change', которое действует, когда убирается фокус
     let items = incomeItem.value;
 
     if (typeof(items) === 'string' && typeof(items) != null && items != '') {
@@ -131,7 +131,7 @@ incomeItem.addEventListener('input', function() {  // есть еще событ
     }
 });
 
-checkSavings.addEventListener('click', function() {
+checkSavings.addEventListener('click', () => {
     (appData.savings === true) ? appData.savings = false : appData.savings = true;
 });
 
