@@ -87,7 +87,7 @@ btnExpences.addEventListener('click', function() {
     expensesValue.textContent = sum;
 });
 
-btnOptionalExpences.addEventListener('click', function() {
+btnOptionalExpences.addEventListener('click', () => {
     for (let i = 0; i < optionalExpensesItem.length; i++) {
         let optExpenses = optionalExpensesItem[i].value;
 
@@ -148,7 +148,7 @@ sumValue.addEventListener('input', function() {
    }
 });
 
-percentValue.addEventListener('input', function() {
+percentValue.addEventListener('input', () => {
     if (appData.savings == true) {
         let sum = +sumValue.value;
         let percent = +percentValue.value;
