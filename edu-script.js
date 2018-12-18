@@ -606,7 +606,13 @@ btn3.forEach(function(item) {
 
 
 /**
- * Скрипты и время их выполнения
+ * Скрипты и время их выполнения setTimeout и setInterval
+ * Делегирование
+ * https://learn.javascript.ru/js-animation – анимации
+ * https://learn.javascript.ru/event-delegation – делегирование событий 1
+ * https://habr.com/post/70760/ – делегирование событий 2
+ * https://davidwalsh.name/event-delegate – делегирование событий 3
+ * https://html5.by/blog/what-is-requestanimationframe/ – requestAnimationFrame
  * 
  */
 
@@ -652,6 +658,30 @@ function myAnimation() {
 }
 
 btn.addEventListener('click', myAnimation);
+
+
+// Делегирование
+let btnBlock = document.querySelector('.btn-block');
+let btns = document.getElementsByTagName('button');
+
+btnBlock.addEventListener('click', (event) => {
+  if (event.target && event.target.tagName == 'BUTTON') {  // делегирование события 1 вариант
+    console.log('Hello');                                  // здесь родитель делегирует потомкам событие клик
+  }
+});
+
+btnBlock.addEventListener('click', (event) => {
+  if (event.target && event.target.classList.contains('first')) {  // делегирование события 2 вариант
+    console.log('Hello');                                          // здесь родитель делегирует событие потомкам с классом first
+  }
+});
+
+btnBlock.addEventListener('click', (event) => {
+  if (event.target && event.target.matches('button.first')) {  // делегирование события 3 вариант (метод Google)
+    console.log('Hello');                                      // ищет совпадения среди кнопок с классом first
+  }
+});
+
 
 
 
