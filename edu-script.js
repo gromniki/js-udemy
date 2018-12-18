@@ -605,9 +605,58 @@ btn3.forEach(function(item) {
 //    Для старых IE8-: elem.attachEvent( on+событие, handler ), удаление через detachEvent.
 
 
+/**
+ * Скрипты и время их выполнения
+ * 
+ */
+
+// setTimeout и setInterval
+
+// let timerId = setTimeout(sayHello, 3000);  // параметры: имя функции и задержка в мс
+// clearTimeout(timerId);  // используется для того, чтобы остановить таймаут
+
+// let timerId = setInterval(sayHello, 3000);  // в отличии от setTimeout эта функция выполняется
+                                               // до бесконечности через заданный промежуток времени, 
+                                               // указанный в параметрах (рекурсия), но данная функция
+                                               // не очень оптимальная, так как при больших объёмах будет
+                                               // нагружать память. Вместо этого используют 
+                                               // setTimeout рекурсивно
+
+// function sayHello() {
+//   alert('Hello World');
+// }
+
+let timerId = setTimeout(function log() {
+  console.log('Hello');
+  setTimeout(log, 2000);
+});  // пример рекурсии setTimeout
 
 
-// Разобраться почему не работает код
+// сделаем простую анимацию
+let btn = document.querySelector('.btn');
+let elem = document.querySelector('.box');
+
+function myAnimation() {
+  let pos = 0;  
+  let id = setInterval(frame, 10);
+
+  function frame() {
+    if (pos == 300) {
+      clearInterval(id);
+    } else {
+      pos++
+      elem.style.top = pos + 'px';
+      elem.style.left = pos + 'px';
+    }
+  }
+}
+
+btn.addEventListener('click', myAnimation);
+
+
+
+
+// Разные примеры
 let moneySum = 148;
 
 switch (moneySum) {
