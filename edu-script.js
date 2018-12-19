@@ -669,6 +669,48 @@ btn.addEventListener('click', myAnimation);
 
 setInterval(step, 17);
 
+// Что не так с этой функцией?
+
+// Во-первых, SetTimeout не принимает во внимание то, что еще происходит в браузере. Страница может,
+// например, находится в неактивной вкладке браузера. При этом она будет использовать ресурсы процессора не взирая на это.
+
+// Кстати умный Chrome делает setInterval и setTimeout равным 1fps в скрытых вкладках.. но, насколько я знаю,
+// так пока делает только chrome :(
+
+// Во-вторых, SetTimeout требует перерисовки страницы не в то же время, когда это делает ваш компьютер 
+// (а он делает это регулярно). Это означает, что ваш бедный браузер должен синхронизировать вашу
+// горе-анимацию с обновлением всего экрана, и если ее частота не синхронизирована с обновлением
+// всего экрана, это может потребовать больше вычислительной мощности. А это загрузка процессора,
+// нагрев, шум куллера, расход батареи мобильных девайсов.. и т.п
+
+// Еще одним аспектом является анимации нескольких элементов сразу. Конечно, можно попытаться
+// все это синхронизировать, но .. это очередной кошмар, в случае разноплановой анимации, происходящей одновремменно.
+
+// requestAnimationFrame – путь к спасению!
+// ---------------------
+
+function step() {
+  requestAnimationFrame(step, element);
+  // описываем один шаг анимации тут
+}
+step();
+
+// Однако, как вы могли заметить, мы не указали интервал. Как часто бдет вызываться наша функция?
+// Все зависит от частоты кадров вашего браузера и компьютера (обычно это 60 кадров в секунду).
+// Ключевым отличием является то, что вы просите браузер выполнить функцию (в нашем примере step)
+// при первой возможности, а не с заданным интервалом. Еще одно достоинство такого подхода в том,
+// что браузеры могут снизить requestAnimationFrame в зависимости от нагрузки, видимости элемента и состояния батареи.
+
+// Если вдруг захочу установить частоту кадров
+
+let fps = 15;
+function step() {
+    setTimeout(function() {
+        requestAnimationFrame(step);
+        // Drawing code goes here
+    }, 1000 / fps);
+}
+
 
 // Делегирование
 // -------------
@@ -698,6 +740,65 @@ btnBlock.addEventListener('click', (event) => {
     console.log('Hello');                                      // ищет совпадения среди кнопок с классом first
   }
 });
+
+// Еще пример делегирования
+{/* <ul id="parent-list">
+	<li id="post-1">Item 1</li>
+	<li id="post-2">Item 2</li>
+	<li id="post-3">Item 3</li>
+	<li id="post-4">Item 4</li>
+	<li id="post-5">Item 5</li>
+	<li id="post-6">Item 6</li>
+</ul> */}
+
+// Get the element, add a click listener...
+document.getElementById("parent-list").addEventListener("click", function(e) {
+	// e.target is the clicked element!
+	// If it was a list item
+	if(e.target && e.target.nodeName == "LI") {
+		// List item found!  Output the ID!
+		console.log("List item ", e.target.id.replace("post-", ""), " was clicked!");
+	}
+});
+
+// or
+
+// Get the parent DIV, add click listener...
+document.getElementById("myDiv").addEventListener("click",function(e) {
+	// e.target was the clicked element
+  if (e.target && e.target.matches("a.classA")) {
+    console.log("Anchor element clicked!");
+	}
+});
+
+
+
+/**
+ * Ещё про DOM
+ */
+
+window.addEventListener('load', callback);
+// событие load означает, что код начнёт отрабатываться только после полной загрузки 
+// DOM дерева и всех элементов страницы (картинки, иконки и т.д.)
+// Не очень удобное событие, так как какая-нибудь картинка может очень долго грузиться.
+// Вместо него лучше использовать
+// DOMContentLoaded
+
+window.addEventListener('DOMContentLoaded', () => {
+  'use strict';
+
+  // весь код страницы пишу здесь
+});
+
+
+
+
+
+
+
+
+
+
 
 
 
