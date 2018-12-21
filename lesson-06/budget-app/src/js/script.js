@@ -32,9 +32,9 @@ let dayValue = document.querySelector('.day-value');
 let money;
 let time;
 
-expensesBtn.disabled = true;
-optionalExpensesBtn.disabled = true;
-countBtn.disabled = true;
+btnExpences.disabled = true;
+btnOptionalExpences.disabled = true;
+btnCount.disabled = true;
 
 // 2) Если программа еще не запущена (не нажали кнопку "Начать расчет") - сделать кнопки неактивными.
 startPrograms.addEventListener('click', function() {
@@ -52,9 +52,9 @@ startPrograms.addEventListener('click', function() {
     monthValue.value = new Date(Date.parse(time)).getMonth() + 1;
     dayValue.value = new Date(Date.parse(time)).getDate();
 	
-	expensesBtn.disabled = false;
-    optionalExpensesBtn.disabled = false;
-    countBtn.disabled = false;
+	btnExpences.disabled = false;
+    btnOptionalExpences.disabled = false;
+    btnCount.disabled = false;
 
     // allBtns.forEach(function(item) {
     //    item.removeAttribute('disabled');
