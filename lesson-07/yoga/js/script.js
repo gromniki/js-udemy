@@ -7,7 +7,7 @@ window.addEventListener('DOMContentLoaded', () => {
 
     function hideTabContent(a) {
       for (let i = a; i < tabContent.length; i++) {
-        tabContent[i].classList.remove('show');
+        tabContent[i].classList.remove('show', 'active');
         tabContent[i].classList.add('hide');
       }
     }
@@ -17,7 +17,7 @@ window.addEventListener('DOMContentLoaded', () => {
     function showTabContent(b) {
       if (tabContent[b].classList.contains('hide')) {
         tabContent[b].classList.remove('hide');
-        tabContent[b].classList.add('show');
+        tabContent[b].classList.add('show', 'active');
       }
     }
 
@@ -31,6 +31,7 @@ window.addEventListener('DOMContentLoaded', () => {
           if (target == tab[i]) {
             hideTabContent(0);
             showTabContent(i);
+            break;
           }
         }
       }
