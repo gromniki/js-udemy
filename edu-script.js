@@ -790,6 +790,24 @@ window.addEventListener('DOMContentLoaded', () => {
   // весь код страницы пишу здесь
 });
 
+/**
+ * Параметры документа, окна и работа с ними
+ */
+
+ let box = document.querySelector('.box');
+ let btn = document.querySelector('button');
+
+ let width = box.scrollWidth;  // полная ширина контента вместе с прокруткой
+ let height = box.scrollHeight;  // полная высота контента вместе с прокруткой
+ // еще есть такие параметры как:
+ // offsetWidth  // полная ширина включая отступы
+ // offsetHeight
+ // clientWidth  // ширина вместе с полосой прокрутки, без отступов
+ // clientHeight
+
+ console.log(width);
+ console.log(height);
+
 
 
 
