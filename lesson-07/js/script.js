@@ -50,3 +50,7 @@ btnBlock.addEventListener('click', (event) => {
     console.log('Hello');                                      // ищет совпадения среди кнопок с классом first
   }
 });
+
+/**
+ * 
+ */

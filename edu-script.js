@@ -803,11 +803,21 @@ window.addEventListener('DOMContentLoaded', () => {
  // offsetWidth  // полная ширина включая отступы
  // offsetHeight
  // clientWidth  // ширина вместе с полосой прокрутки, без отступов
- // clientHeight
+ // clientHeight  // на величину влияет box-sizing: border-box
 
  console.log(width);
  console.log(height);
 
+btn.addEventListener('click', () => {
+  btn.style.height = box.scrollHeight + 'px';  // данные параметры доступны только для чтения,
+                                               // то есть мы не можем изменить значение scrollHeight
+                                               // из всех параметров окна мы можем изменить только
+                                               // scrollTop и scrollLeft
+});
+
+btn.addEventListener('click', () => {
+  box.scrollTop = 0;
+}
 
 
 
