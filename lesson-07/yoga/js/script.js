@@ -40,5 +40,11 @@ window.addEventListener('DOMContentLoaded', () => {
     // Timer
     let deadline = '2018-12-31';
 
+    function getTimeRemaining(endtime) {
+      let t = Date.parse(endtime) - Date.parse(new Date());  // записываю в переменную разницу даты дэдлайна и настоящей даты в мс
+      let seconds = Math.floor((t / 1000) % 60);  // Получаю секунды из мс делением на 1000 и чтобы получить число не больше 59, применяю остаток от деления на 60, так как в минуте 60 сек
+      let minutes = Math.floor((t / 1000 / 60) % 60);  // Получаю минуты из мс
+    }
+
     //e.addEventListener('click', () => {});  // шаблон
   });
