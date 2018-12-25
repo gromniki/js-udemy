@@ -51,6 +51,3 @@ btnBlock.addEventListener('click', (event) => {
   }
 });
 
-/**
- * 
- */

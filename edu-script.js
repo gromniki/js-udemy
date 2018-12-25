@@ -792,6 +792,7 @@ window.addEventListener('DOMContentLoaded', () => {
 
 /**
  * Параметры документа, окна и работа с ними
+ * Файл: metric-all.png
  */
 
  let box = document.querySelector('.box');
@@ -805,8 +806,19 @@ window.addEventListener('DOMContentLoaded', () => {
  // clientWidth  // ширина вместе с полосой прокрутки, без отступов
  // clientHeight  // на величину влияет box-sizing: border-box
 
- console.log(width);
- console.log(height);
+console.log(width);
+console.log(height);
+сonsole.log(box.getBoundingClientRect());  // показывает значения всех четырех сторон
+console.log(box.getBoundingClientRect().left);  // получение одной нужной координаты
+
+console.log(document.documentElement.clientWidth);  // получение всей ширины документа (видимой)
+console.log(document.documentElement.clientHeight);  // получение всей высоты документа (видимой)
+
+console.log(document.documentElement.scrollTop);  // чаще используется этот метод
+
+scrollBy(0, 200);  // метод скролла по странице. Передвигаемся относительно текущего положения
+scrollTo(0, 200);  // этот метод указывает точные координаты страницы. 
+                   // Мы переместимся в начало документа, отступив 200px сверху
 
 btn.addEventListener('click', () => {
   btn.style.height = box.scrollHeight + 'px';  // данные параметры доступны только для чтения,

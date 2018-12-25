@@ -37,5 +37,8 @@ window.addEventListener('DOMContentLoaded', () => {
       }
     });
 
+    // Timer
+    let deadline = '2018-12-31';
+
     //e.addEventListener('click', () => {});  // шаблон
   });
