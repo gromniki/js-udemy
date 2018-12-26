@@ -49,6 +49,7 @@ console.log(arr[0]);
  * https://learn.javascript.ru/comparison
  * https://learn.javascript.ru/types-conversion
  * https://learn.javascript.ru/logical-ops
+ * https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/Math – Math
  */
 
 // let answer = confirm('Are you here');  // Модальное с двумя вариантами (boolean)
@@ -492,6 +493,7 @@ console.log(div);
  * https://learn.javascript.ru/introduction-browser-events
  * https://developer.mozilla.org/ru/docs/Web/API/EventTarget/addEventListener
  * https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/Date
+ * https://learn.javascript.ru/datetime – Date
  * https://www.w3schools.com/tags/att_disabled.asp
  * 
  */
