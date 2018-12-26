@@ -38,7 +38,7 @@ window.addEventListener('DOMContentLoaded', () => {
     });
 
     // Timer
-    let deadline = '2018-12-31';
+    let deadline = '2018-12-27';
 
     function getTimeRemaining(endtime) {
       let t = Date.parse(endtime) - Date.parse(new Date());  // записываю в переменную разницу даты дэдлайна и настоящей даты в мс
@@ -58,24 +58,34 @@ window.addEventListener('DOMContentLoaded', () => {
     }
 
     function setClock(id, endtime) {
-      let timer = document.getElementById(id);
+      let timer = document.getElementById(id);  // Получаю доступ к тегам в DOM
       let hours = timer.querySelector('.hours');
       let minutes = timer.querySelector('.minutes');
       let seconds = timer.querySelector('.seconds');
       let timeInterval = setInterval(updateClock, 1000);
 
-      function updateClock() {
+      function updateClock() {  // функция обновления времени
         let t = getTimeRemaining(endtime);
         hours.textContent = t.hours;
         minutes.textContent = t.minutes;
         seconds.textContent = t.seconds;
+
+        if (t.total <= 0) {  // если время истекло, то останавливаю счётчик и записываю нули
+          clearInterval(timeInterval);
+
+          hours.textContent = '00';
+          minutes.textContent = '00';
+          seconds.textContent = '00';
+        }
       }
 
     }
 
     setClock('timer', deadline);
 
-    console.log(Date.parse(new Date()) / 1000 / 60);
+    // let today = new Date();  // создаю объект даты
+    // let year = today.getFullYear();  // получаю текущий год
+    // console.log(year);  // 2018
 
     //e.addEventListener('click', () => {});  // шаблон
   });
