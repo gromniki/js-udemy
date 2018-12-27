@@ -57,6 +57,8 @@ window.addEventListener('DOMContentLoaded', () => {
       };  // чтобы получить все данные из функции, нужно вернуть объект с нужными значениями
     }
 
+    // Задача из 4:6:50 сделать 04:06:50
+
     function setClock(id, endtime) {
       let timer = document.getElementById(id);  // Получаю доступ к тегам в DOM
       let hours = timer.querySelector('.hours');
