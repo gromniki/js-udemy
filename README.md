@@ -11,6 +11,24 @@
 ### События
 - https://learn.javascript.ru/introduction-browser-events 
 - https://developer.mozilla.org/ru/docs/Web/API/EventTarget/addEventListener
+- https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/Date
+- https://learn.javascript.ru/datetime – Date
+- https://www.w3schools.com/tags/att_disabled.asp – атрибут disabled
+
+### Делегирование
+- https://learn.javascript.ru/js-animation – анимации
+- https://learn.javascript.ru/event-delegation – делегирование событий 1
+- https://habr.com/post/70760/ – делегирование событий 2
+- https://davidwalsh.name/event-delegate – делегирование событий 3
+- https://html5.by/blog/what-is-requestanimationframe/ – requestAnimationFrame
 
 ### О разном
 - https://medium.com/webbdev/vs-b15bc3155c63 – let vs const
+
+```javascript
+window.addEventListener('DOMContentLoaded', () => {
+  'use strict';
+
+  // весь код страницы пишу здесь
+});
+```
