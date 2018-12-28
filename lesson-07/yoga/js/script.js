@@ -38,7 +38,7 @@ window.addEventListener('DOMContentLoaded', () => {
     });
 
     // Timer
-    let deadline = '2018-12-28';
+    let deadline = '2018-12-29';
 
     function getTimeRemaining(endtime) {
       let t = Date.parse(endtime) - Date.parse(new Date());  // записываю в переменную разницу даты дэдлайна и настоящей даты в мс
@@ -69,18 +69,20 @@ window.addEventListener('DOMContentLoaded', () => {
       function updateClock() {  // функция обновления времени
         let t = getTimeRemaining(endtime);
         
-        
-        
+        // Добавляю нули к цифрам, которые меньше 10
+        t.hours < 10 ? hours.textContent = '0' + t.hours : hours.textContent = t.hours;
+        t.minutes < 10 ? minutes.textContent = '0' + t.minutes : minutes.textContent = t.minutes;
+        t.seconds < 10 ? seconds.textContent = '0' + t.seconds : seconds.textContent = t.seconds;
 
-        if (t.hours < 10 || t.minutes < 10 || t.seconds < 10) {
-          hours.textContent = '0' + t.hours;
-          minutes.textContent = '0' + t.minutes;
-          seconds.textContent = '0' + t.seconds;
-        } else {
-          hours.textContent = t.hours;
-          minutes.textContent = t.minutes;
-          seconds.textContent = t.seconds;
-        }
+        // if (t.hours < 10 || t.minutes < 10 || t.seconds < 10) {
+        //   hours.textContent = '0' + t.hours;
+        //   minutes.textContent = '0' + t.minutes;
+        //   seconds.textContent = '0' + t.seconds;
+        // } else {
+        //   hours.textContent = t.hours;
+        //   minutes.textContent = t.minutes;
+        //   seconds.textContent = t.seconds;
+        // }
 
 
         if (t.total <= 0) {  // если время истекло, то останавливаю счётчик и записываю нули
