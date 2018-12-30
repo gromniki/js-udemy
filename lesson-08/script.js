@@ -24,3 +24,9 @@ window.addEventListener('DOMContentLoaded', () => {
     ivan.hello();
     ivan.anyname();
 });
+
+
+
+function showThis {
+    console.log(this);
+}
