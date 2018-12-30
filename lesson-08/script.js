@@ -26,7 +26,30 @@ window.addEventListener('DOMContentLoaded', () => {
 });
 
 
-
-function showThis {
-    console.log(this);
+// Контекст вызова this
+function showThis(a, b) {
+   // console.log(this);  // window
+    function sum() {
+        //console.log(this);  // window
+        // return this.a + this.b;  // не сможет выполниться, так как функция не видит переменные из-за this
+        return a + b;  // так будет работать (замыкание функции)
+    }
+    console.log(sum());
 }
+showThis(5, 3);
+
+let obj = {
+    a: 20,
+    b: 15,
+    sum: function() {  // sum – это функция, но когда она является методом какого-то объекта, контекст выполнения это и есть сам объект
+        console.log(this);
+        function shout() {
+            console.log(this);
+        }
+        shout();
+    }
+};
+
+
+// 1. Просто вызов функции – window/undefined
+// 2. Метод объекта – this = объект
