@@ -49,7 +49,22 @@ let obj = {
         shout();
     }
 };
+obj.sum();
+
+
+let user = {
+    name: "John"
+};
+
+function sayName(surname) {
+    console.log(this);
+    console.log(this.name + surname);
+}
+
+console.log(sayName.call(user, ''));  // насильно связали функцию с данными объекта user. Можно передать только строку в виде параметра
+console.log(sayName.apply(user));  // второй метод может передать уже массив
 
 
 // 1. Просто вызов функции – window/undefined
 // 2. Метод объекта – this = объект
+// 3. Конструктор (new) – this = новый созданный объект
