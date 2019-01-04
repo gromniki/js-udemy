@@ -101,5 +101,20 @@ window.addEventListener('DOMContentLoaded', () => {
     // let year = today.getFullYear();  // получаю текущий год
     // console.log(year);  // 2018
 
+    // Modal
+    let more = document.querySelector('.more');
+    let overlay = document.querySelector('.overlay');
+    let close = document.querySelector('.popup-close');
+
+    more.addEventListener('click', () => {
+        overlay.style.display = 'block';
+        this.classList.add('more-splash');
+    });
+
+    close.addEventListener('click', () => {
+        overlay.style.display = 'none';
+        
+    });
+
     //e.addEventListener('click', () => {});  // шаблон
   });
