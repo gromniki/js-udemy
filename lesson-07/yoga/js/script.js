@@ -105,6 +105,7 @@ window.addEventListener('DOMContentLoaded', () => {
     let more = document.querySelector('.more');
     let overlay = document.querySelector('.overlay');
     let close = document.querySelector('.popup-close');
+    let tabBtn = document.querySelector('.description-btn');
 
     more.addEventListener('click', function() {
         overlay.style.display = 'block';
