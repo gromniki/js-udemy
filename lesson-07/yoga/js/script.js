@@ -105,7 +105,7 @@ window.addEventListener('DOMContentLoaded', () => {
     let more = document.querySelector('.more');
     let overlay = document.querySelector('.overlay');
     let close = document.querySelector('.popup-close');
-    let tabBtn = document.querySelector('.description-btn');
+    let tabBtn = document.querySelectorAll('.description-btn');
 
     more.addEventListener('click', function() {
         overlay.style.display = 'block';
@@ -113,11 +113,13 @@ window.addEventListener('DOMContentLoaded', () => {
         document.body.style.overflow = 'hidden';
     });
 
-    tabBtn.addEventListener('click', function() {
-      overlay.style.display = 'block';
-      this.classList.add('more-splash');
-      document.body.style.overflow = 'hidden';
-    });
+    for (let i = 0; i < tabBtn.length; i++) {  // кнопка модалки в табах
+      tabBtn[i].addEventListener('click', function() {
+        overlay.style.display = 'block';
+        this.classList.add('more-splash');
+        document.body.style.overflow = 'hidden';
+      });
+    }    
 
     close.addEventListener('click', () => {
         overlay.style.display = 'none';
