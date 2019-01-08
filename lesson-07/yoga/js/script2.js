@@ -2,10 +2,10 @@ window.addEventListener('DOMContentLoaded', function() {
     'use strict';
     let age = document.getElementById('age');
     function showUser(surname, name) {
-        alert("Пользователь " + surname + " " + name + ", его возраст " + age.value);
+        alert("Пользователь " + surname + " " + name + ", его возраст " + this.value);
     }
-    showUser('Голубев', 'Рома');
-
+    //showUser('Голубев', 'Рома');
+    showUser.apply(age, ["Горький","Максим"]);  // метод преподователя
 
     // function hello() {
     //     console.log(this);        
