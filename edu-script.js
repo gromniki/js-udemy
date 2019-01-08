@@ -943,11 +943,44 @@ btn.addEventListener('click', function() {
 
 
 
+/**
+ * Стандарт ES6. ИНТЕРПОЛЯЦИЯ
+ */
 
+let name = 'Danya';
+let age = 9;
+let mail = 'danya@mail.ru';
 
+// document.write('Пользователю ' + name + ' ' + age + ' лет. Почта: ' + mail);  // неудобный, старый формат
+document.write(`Пользователю ${name} ${age} лет. Почта: ${mail}`);  // используем метод интерполяции с помощью косых кавычек
 
+/**
+ * ES6. let, const 
+ */
 
+// 1. Переменные, созданые с помощью let и const видны лишь в блоке кода, ограниченными фигурными скобками
+// 2. Когда браузер читает код, то эти переменные создаются тогда, когда до них дошла очередь 
+// 3. При использовании let или const в цикле, для каждой итерации создаётся своя переменная
 
+function makeArray() {
+    var items = [];
+
+    for (var i = 0; i < 10; i++) {
+        var item = function() {
+            console.log(i);
+        }
+
+        items.push(item);
+    }
+
+    return items;
+}
+
+var arr = makeArray();
+
+arr[1]();
+arr[3]();
+arr[7]();
 
 
 
