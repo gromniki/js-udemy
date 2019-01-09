@@ -945,6 +945,8 @@ btn.addEventListener('click', function() {
 
 /**
  * Стандарт ES6. ИНТЕРПОЛЯЦИЯ
+ * https://www.cheatography.com/romansemko/cheat-sheets/ecmascript-6-es6/pdf_bw/ – шпаргалка по ES6
+ * https://habr.com/post/305900/ – ES6 по-человечески
  */
 
 let name = 'Danya';
@@ -955,7 +957,9 @@ let mail = 'danya@mail.ru';
 document.write(`Пользователю ${name} ${age} лет. Почта: ${mail}`);  // используем метод интерполяции с помощью косых кавычек
 
 /**
- * ES6. let, const 
+ * ES6. let, const
+ * https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Statements/let
+ * https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Statements/const
  */
 
 // 1. Переменные, созданые с помощью let и const видны лишь в блоке кода, ограниченными фигурными скобками
@@ -965,7 +969,9 @@ document.write(`Пользователю ${name} ${age} лет. Почта: ${ma
 function makeArray() {
     var items = [];
 
-    for (var i = 0; i < 10; i++) {
+    for (var i = 0; i < 10; i++) {  // var создалась одна на весь цикл, т.е. в каждой итерации не создается новая
+                                    // поэтому мы можем получить только 10-ку, из-за этого в конце выводится три раза 10
+                                    // Если указать let, то на каждой итерации будет создаваться новая переменная
         var item = function() {
             console.log(i);
         }
@@ -981,6 +987,64 @@ var arr = makeArray();
 arr[1]();
 arr[3]();
 arr[7]();
+
+
+/**
+ * ES6. Стрелочные функции
+ * https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Functions/Arrow_functions
+ * 
+ * Выражения стрелочных функций имеют более короткий синтаксис по сравнению с функциональными
+ * выражениями и лексически привязаны к значению this (но не привязаны к собственному this,
+ * arguments, super, или new.target). 
+ * Стрелочные функции всегда анонимные, то есть мы не можем ей присвоить имя, только если
+ * занести в переменную. Так же мы не можем управлять обработчиками событий, если необходимо
+ * и не сможем запускать эту функцию внутри себя (рекурсия). Своего контекста вызова (this)
+ * стрелочная функция не имеет (пример 1). Она его берёт у своего родителя (пример 2).
+ * 
+ * !!! Чаще всего стрелочные функции используются в обработчиках событий, setInterval, setTimeout, AJAX
+ */
+
+// Пример 1.
+let fun = () => {
+    console.log(this);
+};
+
+fun();
+
+// Пример 2.
+let obj2 = {
+    number: 5,
+    sayNumber: function() {
+        let say = () => {
+            console.log(this);
+        };
+        say();
+    }
+};
+obj2.sayNumber();
+
+// Пример 3
+let btn = document.querySelector('button');
+
+btn.addEventListener('click', function() {
+    let show = () => {
+        console.log(this);
+    };
+    show();  // вызовется кнопка, то есть тот элемент, на который повесили событие
+});
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
