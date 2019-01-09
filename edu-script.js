@@ -1033,6 +1033,23 @@ btn.addEventListener('click', function() {
     show();  // вызовется кнопка, то есть тот элемент, на который повесили событие
 });
 
+/**
+ * ES6. Параметры по-умолчанию
+ * https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Functions/Default_parameters
+ * 
+ */
+
+function calcOrDouble(number, basis = 2) {  // ES6, то есть сразу присваиваем нужное значение.
+                                            // здесь имеется ввиду, что если basis = true, то
+                                            // код выполняется с переданным значением, а если
+                                            // basis = false, то дальше передаётся двоечка
+    // basis = basis || 2;  // ES5
+
+    console.log(number * basis);
+}
+calcOrDouble(3, 5);  // 15
+calcOrDouble(6);  // 12
+
 
 
 
