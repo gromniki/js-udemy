@@ -1070,11 +1070,31 @@ const square = new Rectangle(10, 10);
 
 console.log(square.calcArea());
 
+/**
+ * ES6. Spread-операторы
+ * https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Spread_syntax
+ * 
+ * Spread-оператор служит для разворачивания данных, например массивов
+ */
+
+let video = ['youtube', 'vimeo', 'rutube'];
+let blogs = ['wordpress', 'livejournal', 'blogger'];
+let internet = [...video, ...blogs, 'vk', 'facebook'];  // Spread-оператор в действии. Развернет массив
+//let internet = [video, blogs, 'vk', 'facebook'];  // в таком виде покажется массив вида Array(3)
+
+console.log(internet);
 
 
+function log(a, b, c) {
+    console.log(a);
+    console.log(b);
+    console.log(c);
+    console.log(a + b + c);
+}
 
+let numbers = [2, 5, 7];
 
-
+log(...numbers);  // еще одно применение оператора
 
 
 
