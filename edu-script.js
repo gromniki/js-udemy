@@ -1084,7 +1084,7 @@ let internet = [...video, ...blogs, 'vk', 'facebook'];  // Spread-операто
 
 console.log(internet);
 
-
+// Пример 2
 function log(a, b, c) {
     console.log(a);
     console.log(b);
@@ -1096,7 +1096,18 @@ let numbers = [2, 5, 7];
 
 log(...numbers);  // еще одно применение оператора
 
+// Пример 3
+function sum(x, y, z) {
+    return x + y + z;
+}
+  
+const numbers = [1, 2, 3];
 
+console.log(sum(...numbers));
+// expected output: 6
+ 
+console.log(sum.apply(null, numbers));
+// expected output: 6
 
 
 
