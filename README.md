@@ -22,6 +22,10 @@
 - https://davidwalsh.name/event-delegate – делегирование событий 3
 - https://html5.by/blog/what-is-requestanimationframe/ – requestAnimationFrame
 
+### Объекты и Классы
+- http://jsraccoon.ru/es6-classes
+- https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Classes
+
 ### О разном
 - https://medium.com/webbdev/vs-b15bc3155c63 – let vs const
 

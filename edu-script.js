@@ -1050,7 +1050,25 @@ function calcOrDouble(number, basis = 2) {  // ES6, то есть сразу п�
 calcOrDouble(3, 5);  // 15
 calcOrDouble(6);  // 12
 
+/**
+ * ES6. Classes
+ * http://jsraccoon.ru/es6-classes
+ * https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Classes
+ */
 
+class Rectangle {  // название классов обязательно с заглавной буквы
+    constructor(width, height) {
+        this.width = width;
+        this.height = height;
+    }
+    calcArea() {
+        return this.width * this.height;
+    }
+}
+
+const square = new Rectangle(10, 10);
+
+console.log(square.calcArea());
 
 
 
