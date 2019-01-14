@@ -1,4 +1,4 @@
-window.addEventListener('DOMContentLoaded', () => {
+window.addEventListener('DOMContentLoaded', function() {
     'use strict';
   
     let tab = document.querySelectorAll('.info-header-tab');
@@ -38,11 +38,12 @@ window.addEventListener('DOMContentLoaded', () => {
     });
 
     // Timer
-    let deadline = '2018-12-29';
+    let deadline = '2019-01-21';
 
     function getTimeRemaining(endtime) {
       let t = Date.parse(endtime) - Date.parse(new Date());  // записываю в переменную разницу даты дэдлайна и настоящей даты в мс
-      let seconds = Math.floor((t / 1000) % 60);  // Получаю секунды из мс делением на 1000 и чтобы получить число не больше 59, применяю остаток от деления на 60, так как в минуте 60 сек
+      let seconds = Math.floor((t / 1000) % 60);  // Получаю секунды из мс делением на 1000 и чтобы получить число не больше 59,
+                                                  // применяю остаток от деления на 60, так как в минуте 60 сек
       let minutes = Math.floor((t / 1000 / 60) % 60);  // Получаю минуты из мс
       let hours = Math.floor(t / (1000 * 60 * 60));  // Получаю часы из мс
       
@@ -75,7 +76,7 @@ window.addEventListener('DOMContentLoaded', () => {
         // t.seconds < 10 ? seconds.textContent = '0' + t.seconds : seconds.textContent = t.seconds;
 
         function addZero(num) {  // функция от преподавателя
-          if (num <=9) {
+          if (num <= 9) {
             return '0' + num;
           } else {
             return num;
@@ -114,7 +115,7 @@ window.addEventListener('DOMContentLoaded', () => {
     });
 
     for (let i = 0; i < tabBtn.length; i++) {  // кнопка модалки в табах
-      tabBtn[i].addEventListener('click', function() {
+      tabBtn[i].addEventListener('click', () => {
         overlay.style.display = 'block';
         this.classList.add('more-splash');
         document.body.style.overflow = 'hidden';
