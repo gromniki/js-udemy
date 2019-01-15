@@ -1,3 +1,5 @@
+'use strict';
+
 class User {
     constructor(name, id) {
         this.name = name;
@@ -10,11 +12,13 @@ class User {
     exit() {
         console.log(`Пользователь ${this.name} ушел`);
     }
-    let ivan = new User('Ivan', 25);
-    let alex = new User('Alex', 36);
-    console.log(ivan);
-    console.log(alex);
-
-    ivan.hello();
-    ivan.hello();
 }
+
+let ivan = new User('Ivan', 25);
+let alex = new User('Alex', 36);
+
+console.log(ivan);
+console.log(alex);
+
+ivan.hello();
+ivan.hello();

@@ -57,6 +57,14 @@ window.addEventListener('DOMContentLoaded', function() {
 
             div.textContent = 'Привет земляне!';
 
+            div.style.cssText=`
+                width: ${this.width}px;
+                height: ${this.height}px;
+                font-size: ${this.fontSize}px;
+                text-align: ${this.textAlign};
+                background: ${this.bg};
+            `;
+
             return div;
 
             //return `<div class="test class options"> Проверка дива + </div>`;
