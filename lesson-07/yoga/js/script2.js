@@ -52,12 +52,11 @@ window.addEventListener('DOMContentLoaded', function() {
         }
 
         createDiv() {
-            let div  = document.createElement('div');
-            //let text = document.createTextNode('Привет земляне!');
+            let elem  = document.createElement('div');
+            
+            elem.textContent = 'Привет земляне!';
 
-            div.textContent = 'Привет земляне!';
-
-            div.style.cssText=`
+            elem.style.cssText=`
                 width: ${this.width}px;
                 height: ${this.height}px;
                 font-size: ${this.fontSize}px;
@@ -65,18 +64,14 @@ window.addEventListener('DOMContentLoaded', function() {
                 background: ${this.bg};
             `;
 
-            return div;
+            document.body.appendChild(elem);
 
-            //return `<div class="test class options"> Проверка дива + </div>`;
+            return elem;
         }
     }
 
-    let myText = new Options(40, 40, 24, 'center', '#ff0000');
+    const myText = new Options(400, 100, 24, 'center', '#ff0000');
+    //myText.createDiv();
 
     console.log(myText.createDiv());
-    //console.log(testDiv);
-
-
-    //document.body.insertBefore(myText.createDiv(), testDiv);
-    
 });
