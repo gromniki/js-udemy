@@ -41,10 +41,15 @@ window.addEventListener('DOMContentLoaded', function() {
         // readyState – текущее состояние запроса (5 состояний: UNSENT(0), OPENED(1), HEADERS_RECEIVED(2), LOADING(3), DONE(4))
 
         request.addEventListener('readystatechange', function() {  // это событие более гибкое в отличие от load
+            if (isNaN(inputRub.value)) {
+                inputUsd.value = "Введите число";
+                return false;
+            }
+
             if (request.readyState === 4 && request.status == 200) {  // убеждаемся, что всё прошло гладко
                 let data = JSON.parse(request.response);
 
-                inputUsd.value = Math.round(inputRub.value / data.usd);
+                inputUsd.value = (inputRub.value / data.usd).toFixed(2);
             } else {
                 inputUsd.value = 'Что-то пошло не так!';  // оповещаем пользователя в случае ошибки
             }
