@@ -13,22 +13,37 @@ window.addEventListener('DOMContentLoaded', function() {
     // hello();
     // выведет undefined
 
-    // let names = [
-    //     'Alex',
-    //     '',
-    //     'ludmila',
-    //     'Viktor',
-    //     '',
-    //     'oleg',
-    //     'iNna',
-    //     'Ivan',
-    //     'Alex',
-    //     'Olga',
-    //     ' Ann',
-    //     'aa'
-    // ];
+    let names = [
+        'Alex',
+        '',
+        'ludmila',
+        'Viktor',
+        '',
+        'oleg',
+        'iNna',
+        'Ivan',
+        'Alex',
+        'Olga',
+        ' Ann',
+        'aa'
+    ];
 
-    // console.log(names);
+    // Первое решение (не полное)
+    // let clearNames = names.filter(function(name) {
+    //     if (name.length > 2) {
+    //         return name;
+    //     }
+    // });
+    // console.log(clearNames);
+
+    // Второе решение
+    let newNames = names.map((element) => {
+        return element.toLowerCase();
+    });
+    let newArr = newNames.filter((element) => {
+        return element.length > 2;
+    });
+    console.log(newArr);
 
     
 // Создать класс options

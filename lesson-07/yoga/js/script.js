@@ -128,5 +128,12 @@ window.addEventListener('DOMContentLoaded', function() {
         document.body.style.overflow = '';
     });
 
+    // Form
+    let message = {
+      loading: 'Загрузка...',
+      success: 'Спасибо! Скоро мы с вами свяжемся!',
+      failure: 'Что-то пошло не так...'
+    }
+
     //e.addEventListener('click', () => {});  // шаблон
   });
