@@ -133,7 +133,26 @@ window.addEventListener('DOMContentLoaded', function() {
       loading: 'Загрузка...',
       success: 'Спасибо! Скоро мы с вами свяжемся!',
       failure: 'Что-то пошло не так...'
-    }
+    };
+
+    let form = document.querySelector('main-form');
+    let input = form.getElementsByTagName('input');
+    let statusMessage = document.createElement('div');
+    statusMessage.classList.add('status');
+
+    form.addEventListener('submit', (event) => {
+        event.preventDefault();
+        form.appendChild(statusMessage);
+
+        let request = new XMLHttpRequest();
+        request.open('POST', '../server.php');
+        request.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
+
+        let formData = new FormData(form);
+        request.send(formData);
+
+        request.addEventListener('readystatechange', () => {});
+    });
 
     //e.addEventListener('click', () => {});  // шаблон
   });

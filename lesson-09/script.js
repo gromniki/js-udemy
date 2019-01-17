@@ -41,6 +41,7 @@ window.addEventListener('DOMContentLoaded', function() {
         // readyState – текущее состояние запроса (5 состояний: UNSENT(0), OPENED(1), HEADERS_RECEIVED(2), LOADING(3), DONE(4))
 
         request.addEventListener('readystatechange', function() {  // это событие более гибкое в отличие от load
+                                                                   // наблюдение за состояниями нашего объекта
             if (isNaN(inputRub.value)) {
                 inputUsd.value = "Введите число";
                 return false;
