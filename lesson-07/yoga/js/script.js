@@ -135,23 +135,35 @@ window.addEventListener('DOMContentLoaded', function() {
       failure: 'Что-то пошло не так...'
     };
 
-    let form = document.querySelector('main-form');
+    let form = document.querySelector('.main-form');
     let input = form.getElementsByTagName('input');
     let statusMessage = document.createElement('div');
     statusMessage.classList.add('status');
 
-    form.addEventListener('submit', (event) => {
+    form.addEventListener('submit', function(event) {
         event.preventDefault();
         form.appendChild(statusMessage);
 
         let request = new XMLHttpRequest();
-        request.open('POST', '../server.php');
+        request.open('POST', '/lesson-07/yoga/server.php');
         request.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
 
         let formData = new FormData(form);
         request.send(formData);
 
-        request.addEventListener('readystatechange', () => {});
+        request.addEventListener('readystatechange', function() {
+            if (request.readyState < 4) {
+                statusMessage.innerHTML = message.loading;
+            } else if (request.readyState === 4 && request.readyState == 200) {
+                statusMessage.innerHTML = message.success;
+            } else {
+                statusMessage.innerHTML = message.failure;
+            }
+        });
+
+        for (let i = 0; i < input.length; i++) {
+            input[i].value = '';
+        }
     });
 
     //e.addEventListener('click', () => {});  // шаблон
