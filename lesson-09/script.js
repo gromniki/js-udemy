@@ -31,7 +31,7 @@ window.addEventListener('DOMContentLoaded', function() {
 
         // request.open(method, url, async, login, pass);  // первый метод, который чаще всего идёт следом после создания объекта
         request.open('GET', 'js/current.json');
-        request.setRequestHeader('Content-type', 'application/json; charset=utf-8');  // настройка http запросов
+        request.setRequestHeader('Content-type', 'application/json; charset=utf-8');  // настройка http запросов. Здесь отправка JSON
         request.send();  // отправка данных на сервер. Запускает наш запрос, который идёт за ответом к серверу
 
         // Свойства объекта XMLHttpRequest:
