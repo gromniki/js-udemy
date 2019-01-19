@@ -128,7 +128,7 @@ window.addEventListener('DOMContentLoaded', function() {
         document.body.style.overflow = '';
     });
 
-    // Form
+    // Modal
     let message = {
       loading: 'Загрузка...',
       success: 'Спасибо! Скоро мы с вами свяжемся!',
@@ -171,8 +171,59 @@ window.addEventListener('DOMContentLoaded', function() {
             }
         });
 
-        for (let i = 0; i < input.length; i++) {
+        for (let i = 0; i < input.length; i++) {  // очищаем инпуты после отправки
             input[i].value = '';
+        }
+    });
+
+
+    // Form
+    // let message = {
+    //   loading: 'Загрузка...',
+    //   success: 'Спасибо! Скоро мы с вами свяжемся!',
+    //   failure: 'Что-то пошло не так...'
+    // };
+
+    let formBottom = document.getElementById('form');
+    let inputs = formBottom.getElementsByTagName('input');
+    let statusMessages = document.createElement('div');
+    statusMessages.classList.add('status');
+
+    formBottom.addEventListener('submit', function(event) {
+        event.preventDefault();
+        formBottom.appendChild(statusMessages);
+
+        let request = new XMLHttpRequest();
+        request.open('POST', '/lesson-07/yoga/server.php');
+        request.setRequestHeader('Content-type', 'application/json; charset=utf-8');
+        //request.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');  // для отправки обычных данных
+
+        let formData = new FormData(formBottom);  // получаем всё, что ответил пользователь в форме
+        
+        console.log(formData);
+
+        // Для преобразования объекта в JSON воспользуемся данной конструкцией
+        let obj = {};  // новый объект, куда помещаем полученные данные
+        formData.forEach(function(value, key) {
+          obj[key] = value;
+        });  // нужно запомнить данную конструкцию. ИСПОЛЬЗУЕТСЯ ЧАСТО!!!
+        let json = JSON.stringify(obj);
+
+        // request.send(formData);
+        request.send(json);
+
+        request.addEventListener('readystatechange', function() {
+            if (request.readyState < 4) {
+                statusMessage.innerHTML = message.loading;
+            } else if (request.readyState === 4 && request.readyState == 200) {
+                statusMessage.innerHTML = message.success;
+            } else {
+                statusMessage.innerHTML = message.failure;
+            }
+        });
+
+        for (let i = 0; i < inputs.length; i++) {
+            inputs[i].value = '';
         }
     });
 
