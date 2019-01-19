@@ -150,8 +150,6 @@ window.addEventListener('DOMContentLoaded', function() {
         //request.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');  // для отправки обычных данных
 
         let formData = new FormData(form);  // получаем всё, что ответил пользователь в форме
-        
-        console.log(formData);
 
         // Для преобразования объекта в JSON воспользуемся данной конструкцией
         let obj = {};  // новый объект, куда помещаем полученные данные
@@ -201,8 +199,6 @@ window.addEventListener('DOMContentLoaded', function() {
         //request.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');  // для отправки обычных данных
 
         let formData = new FormData(formBottom);  // получаем всё, что ответил пользователь в форме
-        
-        console.log(formData);
 
         // Для преобразования объекта в JSON воспользуемся данной конструкцией
         let obj = {};  // новый объект, куда помещаем полученные данные
