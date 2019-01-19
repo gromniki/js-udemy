@@ -151,6 +151,8 @@ window.addEventListener('DOMContentLoaded', function() {
 
         let formData = new FormData(form);  // получаем всё, что ответил пользователь в форме
         
+        console.log(formData);
+
         // Для преобразования объекта в JSON воспользуемся данной конструкцией
         let obj = {};  // новый объект, куда помещаем полученные данные
         formData.forEach(function(value, key) {
@@ -214,11 +216,11 @@ window.addEventListener('DOMContentLoaded', function() {
 
         request.addEventListener('readystatechange', function() {
             if (request.readyState < 4) {
-                statusMessage.innerHTML = message.loading;
+                statusMessages.innerHTML = message.loading;
             } else if (request.readyState === 4 && request.readyState == 200) {
-                statusMessage.innerHTML = message.success;
+                statusMessages.innerHTML = message.success;
             } else {
-                statusMessage.innerHTML = message.failure;
+                statusMessages.innerHTML = message.failure;
             }
         });
 

@@ -29,6 +29,10 @@
 ### О разном
 - https://medium.com/webbdev/vs-b15bc3155c63 – let vs const
 
+### Lesson 09. JSON and AJAX
+http://github.com - automatic!
+[Lesson 09](https://github.com/gromniki/js-udemy/tree/master/lesson-09/script.js)
+
 ```javascript
 window.addEventListener('DOMContentLoaded', () => {
   'use strict';
