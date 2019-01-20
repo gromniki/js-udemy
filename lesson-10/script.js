@@ -43,7 +43,7 @@ window.addEventListener('DOMContentLoaded', function() {
     shoot({}, 
         function(mark) {
             console.log('Вы попали в цель');
-            win();
+            win(mark, buyBeer, giveMoney);
         },
         function(miss) {
             console.error(miss);
