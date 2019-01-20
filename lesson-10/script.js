@@ -13,6 +13,8 @@ window.addEventListener('DOMContentLoaded', function() {
     //     });
     // }
 
+    let drink = false;
+
     function shoot(arrow, headshot, fail) {
         console.log('Вы произвели выстрел...');
 
@@ -20,4 +22,32 @@ window.addEventListener('DOMContentLoaded', function() {
             Math.random() > 0.5 ? headshot({}) : fail('Вы промахнулись');
         }, 3000);
     }
+
+    function win() {
+        console.log('Вы победили!');
+        (drink === true) ? buyBeer() : giveMoney();
+    }
+
+    function buyBeer() {
+        console.log('Вам купили пиво');
+    }
+
+    function giveMoney() {
+        console.log('Вам заплатили 1 000 000 долларов');
+    }
+
+    function loose() {
+        console.log('Вы проиграли!');
+    }
+
+    shoot({}, 
+        function(mark) {
+            console.log('Вы попали в цель');
+            win();
+        },
+        function(miss) {
+            console.error(miss);
+            loose();
+        }
+    );
 });
