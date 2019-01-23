@@ -144,6 +144,8 @@ window.addEventListener('DOMContentLoaded', function() {
         event.preventDefault();
         form.appendChild(statusMessage);
 
+        //let promise = new Promise(function(resolve, reject) {});
+
         let request = new XMLHttpRequest();
         request.open('POST', '/lesson-07/yoga/server.php');
         request.setRequestHeader('Content-type', 'application/json; charset=utf-8');
@@ -178,12 +180,6 @@ window.addEventListener('DOMContentLoaded', function() {
 
 
     // Form
-    // let message = {
-    //   loading: 'Загрузка...',
-    //   success: 'Спасибо! Скоро мы с вами свяжемся!',
-    //   failure: 'Что-то пошло не так...'
-    // };
-
     let formBottom = document.getElementById('form');
     let inputs = formBottom.getElementsByTagName('input');
     let statusMessages = document.createElement('div');
