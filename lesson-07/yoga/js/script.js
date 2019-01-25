@@ -130,9 +130,9 @@ window.addEventListener('DOMContentLoaded', function() {
 
     // Modal
     let message = {
-      loading: 'Загрузка...',
-      success: 'Спасибо! Скоро мы с вами свяжемся!',
-      failure: 'Что-то пошло не так...'
+        loading: 'Загрузка...',
+        success: 'Спасибо! Скоро мы с вами свяжемся!',
+        failure: 'Что-то пошло не так...'
     };
 
     let form = document.querySelector('.main-form');
@@ -145,6 +145,7 @@ window.addEventListener('DOMContentLoaded', function() {
         form.appendChild(statusMessage);
 
         //let promise = new Promise(function(resolve, reject) {});
+        
 
         let request = new XMLHttpRequest();
         request.open('POST', '/lesson-07/yoga/server.php');
@@ -177,7 +178,6 @@ window.addEventListener('DOMContentLoaded', function() {
             input[i].value = '';
         }
     });
-
 
     // Form
     let formBottom = document.getElementById('form');
@@ -220,6 +220,5 @@ window.addEventListener('DOMContentLoaded', function() {
             inputs[i].value = '';
         }
     });
-
     //e.addEventListener('click', () => {});  // шаблон
   });
