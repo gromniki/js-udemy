@@ -1,4 +1,4 @@
-
+// Переписать задание, используя объект Promise
 let inputRub = document.getElementById('rub'),
     inputUsd = document.getElementById('usd');
 
