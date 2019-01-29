@@ -29,6 +29,9 @@
 ### О разном
 - https://medium.com/webbdev/vs-b15bc3155c63 – let vs const
 
+### Lesson 08. Конструкторы и классы
+[Lesson 08](https://github.com/gromniki/js-udemy/tree/master/lesson-08/script.js)
+
 ### Lesson 09. JSON and AJAX
 [Lesson 09](https://github.com/gromniki/js-udemy/tree/master/lesson-09/script.js)
 
