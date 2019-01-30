@@ -1132,3 +1132,24 @@ switch (moneySum) {
         console.log('неизвестная сумма');
         break;
 }
+
+
+let num = 90;
+ 
+switch (true) {
+  case num == 49:
+      console.log("wrong");
+      break;
+  case num > 100:
+      console.log("too much");
+      break;
+  case num > 80:
+      console.log("too much also");
+      break;
+  case 50:
+      console.log('right');
+      break;
+  default:
+      console.log("What's wrong?");
+      break;
+}
