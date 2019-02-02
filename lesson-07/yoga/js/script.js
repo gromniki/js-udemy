@@ -144,8 +144,7 @@ window.addEventListener('DOMContentLoaded', function() {
         event.preventDefault();
         form.appendChild(statusMessage);
 
-        //let promise = new Promise(function(resolve, reject) {});
-        
+        //let promise = new Promise(function(resolve, reject) {});        
 
         let request = new XMLHttpRequest();
         request.open('POST', '/lesson-07/yoga/server.php');
@@ -178,6 +177,7 @@ window.addEventListener('DOMContentLoaded', function() {
             input[i].value = '';
         }
     });
+    
 
     // Form
     let formBottom = document.getElementById('form');
