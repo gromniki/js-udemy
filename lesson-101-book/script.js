@@ -16,4 +16,9 @@ window.addEventListener('DOMContentLoaded', function() {
     const SECONDS_IN_A_DAY = SECONDS_IN_AN_HOUR * HOURS_IN_A_DAY;
 
     console.log(SECONDS_IN_A_DAY);
+
+    const DAYS_IN_A_YEAR = 365;
+    const SECONDS_IN_A_YEAR = SECONDS_IN_A_DAY * DAYS_IN_A_YEAR;
+
+    console.log(SECONDS_IN_A_YEAR);
 });
