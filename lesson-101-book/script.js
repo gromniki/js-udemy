@@ -21,4 +21,7 @@ window.addEventListener('DOMContentLoaded', function() {
     const SECONDS_IN_A_YEAR = SECONDS_IN_A_DAY * DAYS_IN_A_YEAR;
 
     console.log(SECONDS_IN_A_YEAR);
+
+    // Какой возраст в секундах
+    let age = 37;
 });
