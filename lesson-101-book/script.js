@@ -1,27 +1,33 @@
-window.addEventListener('DOMContentLoaded', function() {
-    'use strict';
+'use strict';
 
-    /**
-     * Урок 2. Типы данных
-     */
-    
-    // Сколько секунд в году
-    const SECONDS_IN_A_MINUTE = 60;
-    const MINUTES_IN_AN_HOUR = 60;
-    const SECONDS_IN_AN_HOUR = SECONDS_IN_A_MINUTE * MINUTES_IN_AN_HOUR;
-    
-    console.log(SECONDS_IN_AN_HOUR);
+/**
+ * Урок 2. Типы данных
+ */
 
-    const HOURS_IN_A_DAY = 24;
-    const SECONDS_IN_A_DAY = SECONDS_IN_AN_HOUR * HOURS_IN_A_DAY;
+// Сколько секунд в году
+const SECONDS_IN_A_MINUTE = 60;
+const MINUTES_IN_AN_HOUR = 60;
+const SECONDS_IN_AN_HOUR = SECONDS_IN_A_MINUTE * MINUTES_IN_AN_HOUR;
 
-    console.log(SECONDS_IN_A_DAY);
+console.log(SECONDS_IN_AN_HOUR);
 
-    const DAYS_IN_A_YEAR = 365;
-    const SECONDS_IN_A_YEAR = SECONDS_IN_A_DAY * DAYS_IN_A_YEAR;
+const HOURS_IN_A_DAY = 24;
+const SECONDS_IN_A_DAY = SECONDS_IN_AN_HOUR * HOURS_IN_A_DAY;
 
-    console.log(SECONDS_IN_A_YEAR);
+console.log(SECONDS_IN_A_DAY);
 
-    // Какой возраст в секундах
-    let age = 37;
-});
+const DAYS_IN_A_YEAR = 365;
+const SECONDS_IN_A_YEAR = SECONDS_IN_A_DAY * DAYS_IN_A_YEAR;
+
+console.log(SECONDS_IN_A_YEAR);
+
+// Какой возраст в секундах
+let age = 37;
+age * SECONDS_IN_A_YEAR;
+
+
+// Slice
+let longString = 'Эта длинная строка такая длинная';
+longString.slice(4, 18);  // в скобках позиции первого и последнего символов
+// длинная строка
+
