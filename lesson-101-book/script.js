@@ -36,6 +36,19 @@ longString.slice(4, 18);  // в скобках позиции первого и 
 'Эй, как дела?'.toUpperCase();  // ЭЙ, КАК ДЕЛА?
 'Эй, кАК деЛа?'.toLowerCase();  // эй, как дела?
 
+// Задача. Сделать строку 'Эй, как дела?' из 'эЙ, кАК деЛа?'
 
+let sillyString = 'эЙ, кАК деЛа?';  // silly - глупая
+sillyString = sillyString[0].toUpperCase() + sillyString.slice(1).toLowerCase();
+
+
+// let firstChar = sillyString.slice(0, 1).toUpperCase();
+// sillyString = firstChar + sillyString.toLowerCase().slice(1);
+
+
+
+
+console.log(sillyString);
+//console.log(firstChar);
 
 
