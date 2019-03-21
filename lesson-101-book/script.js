@@ -42,3 +42,17 @@ sillyString = sillyString[0].toUpperCase() + sillyString.slice(1).toLowerCase();
 
 console.log(sillyString);
 
+/**
+ * Урок 3. Массивы 
+ */
+
+// Добавление элемента в массив
+// Метод .push добавляет элемент в конец массива
+let animals = [];
+animals.push('Кот');
+animals.push('Пёс');
+animals.push('Лама');
+
+// Метод .unshift добавляет элемент в начало массива, но он более медленный, в отличии от .push
+animals.unshift('Мартышка');
+
